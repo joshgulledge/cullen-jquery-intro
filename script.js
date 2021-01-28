@@ -14,4 +14,22 @@ function onReady() {
 
   const h1Text = $('h1');
   h1Text.text('Goodbye');
+
+  $('#submit-button').on('click', btnClicked);
+  $('#games').on('click', '.delete-button', deleteMe);
+}
+
+function deleteMe() {
+  console.log('delete me');
+}
+
+function btnClicked() {
+  let brand = $('#brand').val();
+
+  $('#games').append(`
+  <li>
+  You picked the game: ${brand}
+  <button class="delete-button"> delete </button>
+  </li>
+  `);
 }
